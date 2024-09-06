@@ -121,14 +121,35 @@ h2 {
 }
 
 .project-item {
+    position: relative;
     background-color: var(--bg-color);
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
+.project-item img {
+    filter: saturate(0.5);
+}
+
+.project-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 .project-item:hover {
     transform: scale(1.05);
+}
+
+.project-item:hover img {
+    filter: saturate(1.0);
 }
 
 .project-item img {
@@ -149,6 +170,20 @@ h2 {
 .project-info p {
     font-size: 0.9rem;
     color: #cccccc;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    list-style-type: none;
+}
+.project-tags li {
+background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
 /* About Section Styles */
