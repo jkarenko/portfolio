@@ -2,7 +2,7 @@
 
 :root {
     --bg-color: #1a1a1a;
-    --text-color: #ffffff;
+    --text-color: #e6e6e6;
     --accent-color: #61dafb;
     --accent-color-darker: color-mix(in srgb, var(--accent-color) 80%, black);
     --sidebar-width: 300px;
@@ -13,6 +13,46 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Adjust content to accommodate header */
+.content {
+    padding-top: 4rem;
 }
 
 body {
@@ -95,12 +135,29 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
+/* Footer Styles */
+footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
 /* Main Content Styles */
 .content {
     flex-grow: 1;
     margin-left: var(--sidebar-width);
     padding: 2rem;
     background-color: var(--content-bg);
+    min-height: calc(100vh - 60px); /* Subtract footer height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push content up */
+.content > :last-child {
+    margin-bottom: auto;
 }
 
 h2 {
@@ -262,6 +319,15 @@ h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+    
     .container {
         flex-direction: column;
     }
@@ -271,5 +337,9 @@ h2 {
         position: static;
         height: auto;
         padding: 1rem;
+    }
+
+    .content {
+        margin-left: 0;
     }
 }
