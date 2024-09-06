@@ -4,6 +4,7 @@
     --bg-color: #1a1a1a;
     --text-color: #ffffff;
     --accent-color: #61dafb;
+    --accent-color-darker: color-mix(in srgb, var(--accent-color) 80%, black);
     --sidebar-width: 300px;
     --content-bg: #2a2a2a;
 }
@@ -172,12 +173,13 @@ h2 {
 
 .project-tags {
     display: flex;
+    justify-content: right; /* Added to center the items */
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
     list-style-type: none;
 }
 .project-tags li {
-background-color: var(--accent-color);
+    background-color: var(--accent-color);
     color: var(--bg-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -201,6 +203,14 @@ background-color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
+#about h4 {
+    font-size: 1.0rem;
+    font-weight: lighter;
+    color: var(--accent-color-darker);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -214,8 +224,21 @@ background-color: var(--accent-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    flex: 1 1 24%;
+    max-width: 24%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.skills-list .skill {
+    color: #cccccc;
+}
+
+.skills-list .exp {
+    color: #ffcc00;
+    margin-left: auto;
+}
 /* Contact Section Styles */
 #contact {
     margin-top: 3rem;
