@@ -145,6 +145,59 @@ h2 {
     color: #cccccc;
 }
 
+/* About Section Styles */
+#about {
+    margin-top: 3rem;
+}
+
+#about p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+#about h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.skills-list li {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Contact Section Styles */
+#contact {
+    margin-top: 3rem;
+}
+
+#contact p {
+    font-size: 1.1rem;
+}
+
+.linkedin-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.3rem;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+.linkedin-link:hover {
+    color: #4fa8d1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -152,4 +205,9 @@ h2 {
     }
 
     .sidebar {
-        
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 1rem;
+    }
+}
