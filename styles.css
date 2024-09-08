@@ -282,11 +282,28 @@ h2 {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    flex: 1 1 24%;
-    max-width: 24%;
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (min-width: 600px) {
+    .skills-list li {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        min-width: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .skills-list li {
+        flex: 1 1 calc(25% - 1rem);
+        max-width: calc(25% - 1rem);
+        min-width: calc(25% - 1rem);
+    }
 }
 
 .skills-list .skill {
